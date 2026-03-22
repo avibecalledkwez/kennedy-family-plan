@@ -396,7 +396,7 @@ export default function App() {
   const groupedTasks = rawGroupedTasks.map(g=>({...g,tasks:g.tasks.filter(t=>!checked[t._stableKey]&&!deleted[t._stableKey])})).filter(g=>g.tasks.length>0);
 
   const mySuggestions = suggestions.filter(s=>!s.accepted&&!s.dismissed&&s.for===user);
-  const completedAll = Object.entries(checked).filter(([k,v])=>v&&!deleted[k]).length;
+  // completedAll is computed after completedTasksList is built (below)
   const currentDone = rawGroupedTasks.reduce((a,g)=>a+g.tasks.filter(t=>checked[t._stableKey]).length,0);
   const currentTotal = rawGroupedTasks.reduce((a,g)=>a+g.tasks.filter(t=>!deleted[t._stableKey]).length,0);
 
@@ -443,6 +443,8 @@ export default function App() {
       }
     }
   }
+
+  const completedAll = completedTasksList.length;
 
   const handleAddTask = () => {
     if(!newTaskText.trim()) return;
