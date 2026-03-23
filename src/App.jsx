@@ -451,6 +451,11 @@ function TaskCard({task, done, onToggle, catColor, onDelete, isExpanded, onExpan
               </select>
             </div>
           )}
+
+          {/* Save & Close button */}
+          <div style={{marginTop:14,display:"flex",justifyContent:"flex-end"}}>
+            <button onClick={()=>{handleTextSave();handleNoteSave();onExpandToggle();}} style={{padding:"8px 20px",borderRadius:8,border:"none",cursor:"pointer",fontSize:13,fontWeight:600,fontFamily:"system-ui",color:"white",background:catColor,transition:"opacity 0.15s"}} onMouseEnter={e=>e.currentTarget.style.opacity="0.85"} onMouseLeave={e=>e.currentTarget.style.opacity="1"}>Save</button>
+          </div>
         </div>
       )}
     </div>
