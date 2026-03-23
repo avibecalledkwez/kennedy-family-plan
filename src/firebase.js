@@ -73,3 +73,23 @@ export const subscribeCustomTasks = (cb) => subscribe("appState", "customTasks",
 export const saveDeleted = (data) => save("appState", "deleted", data);
 export const loadDeleted = () => load("appState", "deleted", {});
 export const subscribeDeleted = (cb) => subscribe("appState", "deleted", cb);
+
+// ── Notes ──
+export const saveNotes = (data) => save("appState", "notes", data);
+export const loadNotes = () => load("appState", "notes", {});
+export const subscribeNotes = (cb) => subscribe("appState", "notes", cb);
+
+// ── Task text edits ──
+export const saveEdits = (data) => save("appState", "edits", data);
+export const loadEdits = () => load("appState", "edits", {});
+export const subscribeEdits = (cb) => subscribe("appState", "edits", cb);
+
+// ── Task segment moves ──
+export const saveTaskMoves = (data) => save("appState", "taskMoves", data);
+export const loadTaskMoves = () => load("appState", "taskMoves", {});
+export const subscribeTaskMoves = (cb) => subscribe("appState", "taskMoves", cb);
+
+// ── Task ordering ──
+export const saveTaskOrder = (data) => save("appState", "taskOrder", data);
+export const loadTaskOrder = () => load("appState", "taskOrder", {});
+export const subscribeTaskOrder = (cb) => subscribe("appState", "taskOrder", cb);
